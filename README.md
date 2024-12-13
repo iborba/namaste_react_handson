@@ -83,3 +83,5 @@ root.render(parent)
 // console.log("Use effect is always called after the HTML component be rendered. So, it's recommended to call the APIs inside useEffect")
 
 \*/
+
+use corsproxy.io if necessary.

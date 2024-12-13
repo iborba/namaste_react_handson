@@ -12,10 +12,18 @@ const Header = () => {
       </div>
       <div className="navItems">
         <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Cart</li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about">About us</a>
+          </li>
+          <li>
+            <a href="/contact">Contact us</a>
+          </li>
+          <li>
+            <a href="/cart">Cart</a>
+          </li>
           <button className="login" onClick={() => setBtnName(btnName === 'Login' ? 'Logout' : 'Login')}>{btnName}</button>
         </ul>
       </div>

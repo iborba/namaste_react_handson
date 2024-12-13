@@ -14,9 +14,23 @@ const Body = () => {
 
   console.log('component rendered')
 
+  // useEffect is called everytime the component is rendered if the second argument is an empty array
   useEffect(() => {
     fetchData()
   }, [])
+
+  // if the second argument is not an empty array, useEffect is called everytime the variable in the array changes
+  // useEffect(() => {
+  //   fetchData()
+  // })
+
+  // if the second argument receives a variable, useEffect is called everytime the variable changes
+  // useEffect(() => {
+  //   fetchData()
+  // }, [searchText])
+
+
+  // don't create state variables inside functions, ifs, loops, etc. Always create them at the top level of the component
 
   const fetchData = async () => {
     let url = 'https://api.yelp.com/v3/businesses/search?location=Alpharetta&categories=icecream&sort_by=rating&limit=5';

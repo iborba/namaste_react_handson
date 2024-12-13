@@ -1,16 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Router from './components/Router'
 import Header from './components/Header'
-import Body from './components/Body'
 
-const AppLayout = () => {
-  return (
-    <div className='appBody'>
-      <Header />
-      <Body />
-    </div>
-  )
-}
-
+const header = ReactDOM.createRoot(document.getElementById('header'))
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<AppLayout />)
+
+header.render(<Header />)
+root.render(<Router />)
