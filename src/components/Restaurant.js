@@ -6,7 +6,7 @@ const Restaurant = () => {
   return (
     <div>
       <a href="/">Return</a>
-      <h2>Restaurant {params.id} page</h2>
+      <h2>Restaurant {params?.id} page</h2>
     </div>
   )
 }

@@ -1,10 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Router from './components/Router'
-import Header from './components/Header'
+import MainApp from './components/MainApp'
+import { BrowserRouter, Routes, Route } from 'react-router'
+import About from './components/About'
+import Contact from './components/Contact'
+import Cart from './components/Cart'
+import Restaurant from './components/Restaurant'
+import Error from './components/Error'
+import Body from './components/Body'
 
-const header = ReactDOM.createRoot(document.getElementById('header'))
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-header.render(<Header />)
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainApp />} errorElement={<Error />}>
+          <Route index element={<Body />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/restaurants'>
+            <Route path=':id' element={<Restaurant />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
 root.render(<Router />)

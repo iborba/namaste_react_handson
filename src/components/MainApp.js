@@ -1,9 +1,11 @@
-import Body from './Body'
+import { Outlet } from 'react-router'
+import Header from './Header'
 
 const MainApp = () => {
   return (
     <div className='appBody'>
-      <Body />
+      <Header />
+      <Outlet />
     </div>
   )
 }

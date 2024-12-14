@@ -1,10 +1,12 @@
+import { Link } from 'react-router';
+
 const RestaurantCards = (props) => {
   const {image_url, name, categories: categoriesObj, rating, distance} = props.restData
   const categories = categoriesObj.map(x => x.title)
 
   return (
     <div className='restaurantCard'>
-      <a href={`/restaurant/:${props.restData.id}`}>
+      <Link to={`/restaurants/:${props.restData.id}`}>      
         <div>
           <img 
             className='restaurantLogo'
@@ -17,7 +19,7 @@ const RestaurantCards = (props) => {
           <h4>{rating} stars</h4>
           <h5>Distance: {Math.floor(distance / 1000)} Km</h5>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
