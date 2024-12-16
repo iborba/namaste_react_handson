@@ -31,7 +31,7 @@ const Restaurant = () => {
         {
           reviews.map(resObj => {
             return (
-              <div>
+              <div key={resObj.id}>
                 <h1>{resObj.user.name}</h1>
                 <p>{resObj.text}</p>
                 <p>{resObj.rating}</p>
